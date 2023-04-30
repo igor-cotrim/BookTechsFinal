@@ -47,6 +47,12 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingHorizontal: 20,
   },
+  ReviewInfo: {
+    display: "flex",
+    flexDirection: "row",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
   synopsisInfo: {
     fontSize: 16,
     paddingHorizontal: 20,

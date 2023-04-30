@@ -3,13 +3,13 @@ import { FlatList, TouchableOpacity, RefreshControl } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { ListItem, Avatar } from "react-native-elements";
 
-import data from "../../api/books.json";
+import api from "../../services/api";
 
 import { styles } from "./styles";
 
 const BookList = () => {
   const navigation = useNavigation();
-  const [books, setBooks] = useState(data);
+  const [books, setBooks] = useState([]);
   const [booksToShow, setBooksToShow] = useState(5);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -41,11 +41,21 @@ const BookList = () => {
     setRefreshing(true);
   };
 
+  const fetchBooks = async () => {
+    const response = await api.get("/books");
+
+    setBooks([...response.data]);
+  };
+
   useEffect(() => {
     if (refreshing) {
       setRefreshing(false);
     }
   }, [refreshing]);
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
   return (
     <FlatList
