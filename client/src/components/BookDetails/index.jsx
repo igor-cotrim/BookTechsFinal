@@ -53,12 +53,12 @@ const BookDetails = ({ route }) => {
           <View style={styles.info}>
             <Text style={styles.info}>Reviews:</Text>
             <View>
-              {reviews.map((review) => (
+              {reviews.map((review, index) => (
                 <View style={styles.ReviewInfo}>
                   <Text key={review.id} style={{ fontWeight: "bold" }}>
                     {review.name}:{" "}
                   </Text>
-                  <Text key={review.id}>{review.comment}</Text>
+                  <Text>{review.comment}</Text>
                 </View>
               ))}
             </View>
