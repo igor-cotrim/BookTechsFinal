@@ -11,7 +11,7 @@ const BookDetails = ({ route }) => {
     route.params.book;
 
   const fetchReviews = async () => {
-    const response = await api.get("/reviews");
+    const response = await api.reviwsApi.get("/reviews");
     const filteredReviews = response.data.filter(
       (review) => review.book_id === id
     );
@@ -53,9 +53,12 @@ const BookDetails = ({ route }) => {
           <View style={styles.info}>
             <Text style={styles.info}>Reviews:</Text>
             <View>
-              {reviews.map((review, index) => (
+              {reviews.map((review) => (
                 <View style={styles.ReviewInfo}>
-                  <Text key={review.id} style={{ fontWeight: "bold" }}>
+                  <Text
+                    key={`${review.id}-${new Date().getTime()}`}
+                    style={{ fontWeight: "bold" }}
+                  >
                     {review.name}:{" "}
                   </Text>
                   <Text>{review.comment}</Text>

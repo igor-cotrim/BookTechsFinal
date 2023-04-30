@@ -1,7 +1,11 @@
 import axios from "axios";
+import { API_URL_BOOKS, API_URL_REVIWS } from "@env";
 
-const api = axios.create({
-  baseURL: "http://192.168.15.61:3333",
+const booksApi = axios.create({
+  baseURL: `${API_URL_BOOKS}`,
+});
+const reviwsApi = axios.create({
+  baseURL: `${API_URL_REVIWS}`,
 });
 
-export default api;
+export default { booksApi, reviwsApi };

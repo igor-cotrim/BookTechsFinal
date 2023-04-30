@@ -42,7 +42,7 @@ const BookList = () => {
   };
 
   const fetchBooks = async () => {
-    const response = await api.get("/books");
+    const response = await api.booksApi.get("/books");
 
     setBooks([...response.data]);
   };
