@@ -1,5 +1,5 @@
 const fs = require("fs");
-const knex = require("knex")(require("../../knexfile"));
+const knex = require("knex")(require("../../../knexfile").development);
 
 const books = JSON.parse(fs.readFileSync("src/database/jsons/books.json"));
 const reviews = JSON.parse(fs.readFileSync("src/database/jsons/reviews.json"));

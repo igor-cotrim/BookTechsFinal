@@ -13,3 +13,5 @@ app.use(express.json()); //converta esse json em js>>> importante ser antes da r
 app.use(routes); //app funcionando com as rotas
 
 app.listen(3333, "0.0.0.0"); //localhost:3333
+
+module.exports = app;

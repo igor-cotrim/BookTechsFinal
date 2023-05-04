@@ -8,6 +8,7 @@ services:
     hostname: books
     volumes:
       - .:/app
+      - ./src:/opt/app/src
       - ./package.json:/opt/package.json
       - ./package-lock.json:/opt/package-lock.json # Replace with package-lock.json if using npm
     ports:
@@ -20,6 +21,7 @@ services:
     hostname: reviews
     volumes:
       - .:/app
+      - ./src:/opt/app/src
       - ./package.json:/opt/package.json
       - ./package-lock.json:/opt/package-lock.json # Replace with package-lock.json if using npm
     ports:

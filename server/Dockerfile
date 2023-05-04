@@ -1,13 +1,17 @@
 FROM node:14
 
-WORKDIR /app
+WORKDIR /opt/
 
-COPY package*.json ./
+COPY ./package.json ./package-lock.json ./
+
+ENV PATH /opt/node_modules/.bin:$PATH
 
 RUN npm install
 
-COPY . .
+WORKDIR /opt/app
+
+COPY ./ .
 
 EXPOSE 3333
 
-CMD ["npm","start"]
+CMD ["npm", "start"]
