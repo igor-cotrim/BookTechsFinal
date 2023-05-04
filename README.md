@@ -35,8 +35,8 @@ Este aplicativo é uma ferramenta útil para desenvolvedores em busca de novos l
 
 1. No Front-end no crie o arquivo .env coloque o ip da sua maquina para conseguir pegar as rotas. O .env tem que ficar assim, com o seu IP:
 ```bash
-API_URL_BOOKS=http://192.168.0.10:3333
-API_URL_REVIWS=http://192.168.0.10:3332
+API_URL_BOOKS=http://192.168.0.10:3000
+API_URL_REVIWS=http://192.168.0.10:3001
 ```
 
 ## Iniciar
@@ -58,6 +58,14 @@ API_URL_REVIWS=http://192.168.0.10:3332
 4. Escaneie o código QR gerado no terminal ou na página aberta em seu navegador.
 
 5. Aguarde a instalação do aplicativo e aproveite!
+
+## Testes
+
+1. Com o serviços do backend rodando no Docker, va para o diretorio /server e rode o comando para testes
+```bash
+  cd server
+  npm run test
+```
 
 ## Dicas
 
